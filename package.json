@@ -1,0 +1,23 @@
+{
+  "name": "youve-got-mail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claracampos/youve-got-mail.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claracampos/youve-got-mail/issues"
+  },
+  "homepage": "https://github.com/claracampos/youve-got-mail#readme"
+}
