@@ -14,6 +14,19 @@ app.use(express.static(publicDirectoryPath));
 
 io.on("connection", socket => {
   console.log("New connection");
+
+  socket.on("join", ({ username, room }) => {
+    socket.join(room);
+
+    socket.emit("adminMessage", "Welcome!");
+    socket
+      .to(room)
+      .broadcast.emit("adminMessage", `${username} has joined the chat`);
+  });
+
+  socket.on("sendMessage", ({ message, username, room }) => {
+    io.to(room).emit("message", { message, username });
+  });
 });
 
 server.listen(port, () => {
