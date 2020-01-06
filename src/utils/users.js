@@ -1,12 +1,12 @@
 const users = [];
 
 //user = {username, room, id, icon}
-const addUser = user => {
-  if (!user.username) {
+const addUser = ({ username, room, id, icon }) => {
+  if (!username) {
     return { error: "Username required." };
   }
 
-  if (!user.room) {
+  if (!room) {
     return { error: "Room required." };
   }
 
@@ -19,14 +19,14 @@ const addUser = user => {
     );
   };
 
-  if (!listedRoom(user.room)) {
+  if (!listedRoom(room)) {
     return { error: "The room you requested is not available." };
   }
 
   const existingUser = users.find(
     existingUser =>
       existingUser.username.trim().toLowerCase() ===
-      user.username.trim().toLowerCase()
+      username.trim().toLowerCase()
   );
 
   if (existingUser) {
@@ -39,12 +39,12 @@ const addUser = user => {
     );
   };
 
-  if (!listedIcon(user.icon)) {
-    user.icon = "email";
+  if (!listedIcon(icon)) {
+    icon = "email";
   }
 
-  users.push(user);
-  return user;
+  users.push({ id, username, icon, room });
+  return "User added";
 };
 
 const getUsersInRoom = room => {
@@ -57,4 +57,10 @@ const removeUser = id => {
   if (userIndex !== -1) {
     return users.splice(userIndex, 1)[0];
   }
+};
+
+module.exports = {
+  addUser,
+  getUsersInRoom,
+  removeUser
 };
