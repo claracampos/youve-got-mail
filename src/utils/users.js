@@ -43,6 +43,8 @@ const addUser = ({ username, room, id, icon }) => {
     icon = "email";
   }
 
+  icon = `./media/${icon}.jpg`;
+
   const newUser = { id, username, icon, room };
   users.push(newUser);
   return newUser;

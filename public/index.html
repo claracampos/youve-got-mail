@@ -12,7 +12,7 @@
       For extra ambience, click play to relive that sweet/awful dial-up
       connection sound from 1998:
     </p>
-    <audio controls src="./audio.mp3" type="audio/mp3"></audio>
+    <audio controls src="./media/audio.mp3" type="audio/mp3"></audio>
     <form action="./chat.html">
       <label>Username</label>
       <input type="text" name="username" placeholder="Username" required />
@@ -23,10 +23,19 @@
         <option value="fox-books">Fox Books</option>
         <option value="over-30">Over 30</option> </select
       ><br />
-      <input type="radio" name="icon" value="email" checked />Email<br />
-      <input type="radio" name="icon" value="meg" />Meg<br />
-      <input type="radio" name="icon" value="tom" />Tom<br />
-      <input type="radio" name="icon" value="dog" />Dog<br />
+      <label>Choose your icon:</label>
+      <input type="radio" name="icon" value="email" checked /><img
+        src="./media/email.jpg"
+      />
+      <input type="radio" name="icon" value="meg" /><img
+        src="./media/meg.jpg"
+      />
+      <input type="radio" name="icon" value="tom" /><img
+        src="./media/tom.jpg"
+      />
+      <input type="radio" name="icon" value="dog" /><img
+        src="./media/dog.jpg"
+      /><br />
       <button>Join</button>
     </form>
     <script src="/socket.io/socket.io.js"></script>
