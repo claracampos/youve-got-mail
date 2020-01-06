@@ -13,8 +13,10 @@ socket.emit("join", { username, room, icon }, error => {
 
 const messageForm = document.querySelector("#message-form");
 const messages = document.querySelector("#messages");
+const userList = document.querySelector("#user-list");
 const messageTemplate = document.querySelector("#message-template");
 const adminMessageTemplate = document.querySelector("#admin-message-template");
+const userListTemplate = document.querySelector("#user-list-template");
 
 socket.on("message", ({ message, username }) => {
   const html = messageTemplate.innerHTML;
@@ -29,6 +31,12 @@ socket.on("adminMessage", message => {
   const html = adminMessageTemplate.innerHTML;
   const newMessage = Mustache.render(html, { message: message });
   messages.insertAdjacentHTML("beforeend", newMessage);
+});
+
+socket.on("roomData", ({ room, users }) => {
+  const html = userListTemplate.innerHTML;
+  const newUserList = Mustache.render(html, { room: room, users: users });
+  userList.innerHTML = newUserList;
 });
 
 messageForm.addEventListener("submit", e => {

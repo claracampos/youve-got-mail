@@ -2,7 +2,12 @@ const path = require("path");
 const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
-const { addUser, removeUser, getUser } = require("./utils/users");
+const {
+  addUser,
+  removeUser,
+  getUser,
+  getUsersInRoom
+} = require("./utils/users");
 
 const app = express();
 const server = http.createServer(app);
@@ -25,6 +30,8 @@ io.on("connection", socket => {
 
     socket.join(room);
 
+    io.to(room).emit("roomData", { room: room, users: getUsersInRoom(room) });
+
     socket.emit("adminMessage", "Welcome!");
     socket
       .to(room)
@@ -43,6 +50,11 @@ io.on("connection", socket => {
         "adminMessage",
         `${user.username} has left the chat.`
       );
+
+      io.to(user.room).emit("roomData", {
+        room: user.room,
+        users: getUsersInRoom(user.room)
+      });
     }
   });
 });
