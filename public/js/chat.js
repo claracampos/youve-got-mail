@@ -4,7 +4,12 @@ const { username, room, icon } = Qs.parse(location.search, {
   ignoreQueryPrefix: true
 });
 
-socket.emit("join", { username, room, icon });
+socket.emit("join", { username, room, icon }, error => {
+  if (error) {
+    alert(error);
+    location.replace("/");
+  }
+});
 
 const messageForm = document.querySelector("#message-form");
 const messages = document.querySelector("#messages");

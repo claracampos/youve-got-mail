@@ -2,6 +2,7 @@ const path = require("path");
 const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
+const { addUser, removeUser, getUser } = require("./utils/users");
 
 const app = express();
 const server = http.createServer(app);
@@ -15,7 +16,13 @@ app.use(express.static(publicDirectoryPath));
 io.on("connection", socket => {
   console.log("New connection");
 
-  socket.on("join", ({ username, room }) => {
+  socket.on("join", ({ username, room, icon }, callback) => {
+    const { error } = addUser({ username, room, icon, id: socket.id });
+
+    if (error) {
+      return callback(error);
+    }
+
     socket.join(room);
 
     socket.emit("adminMessage", "Welcome!");
@@ -29,7 +36,14 @@ io.on("connection", socket => {
   });
 
   socket.on("disconnect", () => {
-    io.emit("adminMessage", "A user has left the chat.");
+    const user = removeUser(socket.id);
+
+    if (user) {
+      io.to(user.room).emit(
+        "adminMessage",
+        `${user.username} has left the chat.`
+      );
+    }
   });
 });
 
