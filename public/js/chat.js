@@ -35,7 +35,24 @@ socket.on("adminMessage", message => {
 
 socket.on("roomData", ({ room, users }) => {
   const html = userListTemplate.innerHTML;
-  const newUserList = Mustache.render(html, { room: room, users: users });
+  const roomTitle = room => {
+    switch (room) {
+      case "nyc":
+        return "New York City";
+      case "over-30":
+        return "Over 30";
+      case "shop-corner":
+        return "Shop Around The Corner";
+      case "fox-books":
+        return "Fox Books";
+      default:
+        return "You've Got Mail!";
+    }
+  };
+  const newUserList = Mustache.render(html, {
+    room: roomTitle(room),
+    users: users
+  });
   userList.innerHTML = newUserList;
 });
 
