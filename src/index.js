@@ -21,11 +21,15 @@ io.on("connection", socket => {
     socket.emit("adminMessage", "Welcome!");
     socket
       .to(room)
-      .broadcast.emit("adminMessage", `${username} has joined the chat`);
+      .broadcast.emit("adminMessage", `${username} has joined the chat.`);
   });
 
   socket.on("sendMessage", ({ message, username, room }) => {
     io.to(room).emit("message", { message, username });
+  });
+
+  socket.on("disconnect", () => {
+    io.emit("adminMessage", "A user has left the chat.");
   });
 });
 

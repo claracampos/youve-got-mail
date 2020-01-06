@@ -7,7 +7,6 @@ const { username, room, icon } = Qs.parse(location.search, {
 socket.emit("join", { username, room, icon });
 
 const messageForm = document.querySelector("#message-form");
-const messageFormInput = messageForm.querySelector("input");
 const messages = document.querySelector("#messages");
 const messageTemplate = document.querySelector("#message-template");
 const adminMessageTemplate = document.querySelector("#admin-message-template");
@@ -29,7 +28,7 @@ socket.on("adminMessage", message => {
 
 messageForm.addEventListener("submit", e => {
   e.preventDefault();
-  const message = messageFormInput.value;
+  const message = e.target.elements.message.value;
   socket.emit("sendMessage", { message, username, room });
-  messageFormInput.value = "";
+  e.target.elements.message.value = "";
 });
