@@ -43,8 +43,13 @@ const addUser = ({ username, room, id, icon }) => {
     icon = "email";
   }
 
-  users.push({ id, username, icon, room });
-  return "User added";
+  const newUser = { id, username, icon, room };
+  users.push(newUser);
+  return newUser;
+};
+
+const getUser = id => {
+  return users.find(existingUser => existingUser.id === id);
 };
 
 const getUsersInRoom = room => {
@@ -61,6 +66,7 @@ const removeUser = id => {
 
 module.exports = {
   addUser,
+  getUser,
   getUsersInRoom,
   removeUser
 };
