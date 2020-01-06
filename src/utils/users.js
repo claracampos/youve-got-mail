@@ -1,7 +1,6 @@
 const users = [];
 
 //user = {username, room, id, icon}
-
 const addUser = user => {
   if (!user.username) {
     return { error: "Username required." };
@@ -46,4 +45,16 @@ const addUser = user => {
 
   users.push(user);
   return user;
+};
+
+const getUsersInRoom = room => {
+  return users.filter(existingUser => existingUser.room === room);
+};
+
+const removeUser = id => {
+  const userIndex = users.findIndex(existingUser => existingUser.id === id);
+
+  if (userIndex !== -1) {
+    return users.splice(userIndex, 1)[0];
+  }
 };
