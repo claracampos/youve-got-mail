@@ -22,7 +22,8 @@ socket.on("message", ({ message, username }) => {
   const html = messageTemplate.innerHTML;
   const newMessage = Mustache.render(html, {
     message: message,
-    username: username
+    username: username,
+    timestamp: moment(message.createdAt).format("hh:mm A")
   });
   messages.insertAdjacentHTML("beforeend", newMessage);
 });
@@ -59,6 +60,8 @@ socket.on("roomData", ({ room, users }) => {
 messageForm.addEventListener("submit", e => {
   e.preventDefault();
   const message = e.target.elements.message.value;
-  socket.emit("sendMessage", { message, username, room });
-  e.target.elements.message.value = "";
+  if (message) {
+    socket.emit("sendMessage", { message, username, room });
+    e.target.elements.message.value = "";
+  }
 });
