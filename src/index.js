@@ -32,7 +32,7 @@ io.on("connection", socket => {
 
     io.to(room).emit("roomData", { room: room, users: getUsersInRoom(room) });
 
-    socket.emit("adminMessage", "Welcome!");
+    socket.emit("adminMessage", `Welcome, ${username}!`);
     socket
       .to(room)
       .broadcast.emit("adminMessage", `${username} has joined the chat.`);
