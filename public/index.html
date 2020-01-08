@@ -1,43 +1,130 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="./styles/index.css" />
     <title>
       You've Got Mail!
     </title>
   </head>
-  <body>
-    <h1>You've Got Mail!</h1>
-    <h2>A chat app based on the 90s rom-com</h2>
-    <p>
-      For extra ambience, click play to relive that sweet/awful dial-up
-      connection sound from 1998:
-    </p>
-    <audio controls src="./media/audio.mp3" type="audio/mp3"></audio>
-    <form action="./chat.html">
-      <label>Username</label>
-      <input type="text" name="username" placeholder="Username" required />
-      <label>Room</label>
-      <select name="room">
-        <option value="nyc">New York City</option>
-        <option value="shop-corner">Shop Around The Corner</option>
-        <option value="fox-books">Fox Books</option>
-        <option value="over-30">Over 30</option> </select
-      ><br />
-      <label>Choose your icon:</label>
-      <input type="radio" name="icon" value="email" checked /><img
-        src="./media/email.jpg"
-      />
-      <input type="radio" name="icon" value="meg" /><img
-        src="./media/meg.jpg"
-      />
-      <input type="radio" name="icon" value="tom" /><img
-        src="./media/tom.jpg"
-      />
-      <input type="radio" name="icon" value="dog" /><img
-        src="./media/dog.jpg"
-      /><br />
-      <button>Join</button>
-    </form>
+  <body class="bg-info">
+    <nav class="navbar navbar-light bg-primary border border-dark">
+      <button class="btn  btn-outline-light">About</button>
+    </nav>
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col bg-white shadow rounded-bottom border border-secondary">
+          <div>
+            <h1 class="pt-3 font-weight-bold">You've Got Mail!</h1>
+            <h2 class="font-weight-bold">
+              A chat app based on the 90s rom-com starring Tom Hanks & Meg Ryan.
+            </h2>
+          </div>
+          <div class="mt-4">
+            <form action="./chat.html">
+              <div class="form-group d-flex flex-column">
+                <label>Enter your username:</label>
+                <input
+                  class="align-self-center input-width"
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  required
+                />
+              </div>
+              <div class="form-group d-flex flex-column">
+                <label>Pick a room:</label>
+                <select class="align-self-center input-width" name="room">
+                  <option value="nyc">New York City</option>
+                  <option value="shop-corner">Shop Around The Corner</option>
+                  <option value="fox-books">Fox Books</option>
+                  <option value="over-30">Over 30</option>
+                </select>
+              </div>
+              <div class="container form-group">
+                <div class="row">
+                  <div class="col">
+                    <label>Choose your icon:</label>
+                    <div class="d-inline-flex flex-row flex-wrap">
+                      <div class="mx-2 mb-2">
+                        <input
+                          type="radio"
+                          name="icon"
+                          value="email"
+                          checked
+                        /><img src="./media/email.jpg" class="ml-1" />
+                      </div>
+                      <div class="mx-2 mb-2">
+                        <input type="radio" name="icon" value="meg" /><img
+                          src="./media/meg.jpg"
+                          class="ml-1"
+                        />
+                      </div>
+                      <div class="mx-2 mb-2">
+                        <input type="radio" name="icon" value="tom" /><img
+                          src="./media/tom.jpg"
+                          class="ml-1"
+                        />
+                      </div>
+                      <div class="mx-2 mb-2">
+                        <input type="radio" name="icon" value="dog" /><img
+                          src="./media/dog.jpg"
+                          class="ml-1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="btn-sm btn-danger border-secondary px-4">
+                Join!
+              </button>
+            </form>
+          </div>
+          <div class="mt-4">
+            <p class="small-text">
+              (For extra ambience, click <b>play</b> to relive that sweet/awful
+              dial-up connection sound from 1998.)
+            </p>
+            <audio
+              class="audio-width mb-4"
+              controls
+              src="./media/audio.mp3"
+              type="audio/mp3"
+            ></audio>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <p class="footer-text">Created by Clara Campos, 2020.</p>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
