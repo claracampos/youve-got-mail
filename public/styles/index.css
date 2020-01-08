@@ -82,16 +82,15 @@ img {
   }
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1200px) {
   body {
-    padding-top: 15%;
-    padding-left: 20%;
+    padding: 2rem 0.5rem 0 0.5rem;
     background-image: url("../media/background.jpg");
     background-repeat: no-repeat;
   }
 
   .input-width {
-    width: 35%;
+    width: 25%;
   }
   .audio-width {
     width: 50%;
@@ -99,33 +98,34 @@ img {
 
   .desktop-view {
     width: 80%;
+    padding-left: 20%;
   }
 }
 
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 1680px) {
   body {
-    padding-left: 20%;
-    padding-top: 20%;
+    padding: 3rem 2rem 0 2rem;
     background-image: url("../media/background.jpg");
     background-repeat: no-repeat;
   }
 
   .input-width {
-    width: 35%;
+    width: 25%;
   }
+
   .audio-width {
     width: 50%;
   }
 
   .desktop-view {
-    width: 50%;
+    width: 60%;
+    padding-left: 20%;
   }
 }
 
 @media only screen and (min-width: 3000px) {
   body {
-    padding-left: 10%;
-    padding-top: 10%;
+    padding: 5rem 2rem 0 2rem;
     background-image: url("../media/background.jpg");
     background-repeat: no-repeat;
   }
@@ -138,6 +138,7 @@ img {
   }
 
   .desktop-view {
-    width: 30%;
+    width: 40%;
+    padding-left: 20%;
   }
 }
