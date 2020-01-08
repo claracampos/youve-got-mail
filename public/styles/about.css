@@ -4,6 +4,10 @@ h3 {
   font-family: "Roboto Slab", serif;
 }
 
+.font {
+  font-family: "Roboto Slab", serif;
+}
+
 h1 {
   font-size: 1.7rem;
   line-height: 1.2rem;
@@ -19,4 +23,41 @@ h3 {
 
 .photo {
   width: 150px;
+}
+
+@media only screen and (min-width: 768px) {
+  .resize {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    background-image: url("../media/background.jpg");
+    background-repeat: no-repeat;
+  }
+
+  .resize {
+    width: 55%;
+  }
+}
+
+@media only screen and (min-width: 1680px) {
+  body {
+    background-image: url("../media/background.jpg");
+    background-repeat: no-repeat;
+  }
+  .resize {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 3000px) {
+  body {
+    background-image: url("../media/background.jpg");
+    background-repeat: no-repeat;
+  }
+  .resize {
+    width: 30%;
+  }
 }
