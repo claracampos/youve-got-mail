@@ -13,35 +13,123 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" type="text/css" href="./styles/about.css" />
 
     <title>
       About
     </title>
   </head>
-  <body>
-    <h1>About</h1>
-    <h2>About The Movie</h2>
-<p>You've Got Mail is a 1998 romantic comedy film directed by Nora Ephron. It tells the story of two business rivals, Kathleen Kelly (Meg Ryan) and Joe Fox (Tom Hanks), who fall in love with each other after meeting in an online chatroom.
-</p>
-<p>Trailer</p>
+  <body class="bg-info">
+    <div class="my-3 container-fluid">
+      <nav
+        class="navbar text-white justify-content-between bg-primary border border-dark shadow-lg"
+      >
+        <h1 class="my-0">About</h1>
+        <a href="/" class="btn btn-danger border border-dark my-0">Go Home</a>
+      </nav>
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div
+            class="col bg-white border border-secondary rounded-bottom shadow-lg py-3"
+          >
+            <h2 class="font-weight-bold">About The Movie</h2>
+            <p>
+              <i>You've Got Mail</i> is a 1998 romantic comedy film directed by
+              Nora Ephron. It tells the story of two business rivals, Kathleen
+              Kelly (Meg Ryan) and Joe Fox (Tom Hanks), who fall in love with
+              each other after meeting in an online chatroom.
+            </p>
+            <div class="d-flex flex-row justify-content-center">
+              <div class="embed-responsive embed-responsive-4by3 w-75">
+                <iframe
+                  class="embed-responsive-item"
+                  src="https://www.youtube.com/embed/GSeeFgsqUxU"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
 
-<h2>About The App</h2>
-<p>This website and chat application was created, developed and styled by:</p>
-<p>Photo</p>
-</p>Clara Campos
-Prince Edward Island, Canada</p>
+            <h2 class="mt-4 font-weight-bold">About The App</h2>
+            <p>
+              This website and chat application were developed and styled by:
+            </p>
+            <div class="d-flex flex-column align-items-center mb-3">
+              <img class="rounded-circle photo" src="./media/photo.jpg" />
+              <p class="font-weight-bold text-secondary m-0">Clara Campos</p>
 
-<p>It was built on Node.js, Socket.io, a healthy dose of nostalgia and the developer’s genuine love for Nora Ephron movies starring Meg Ryan. (If you haven’t seen When Harry Met Sally yet, you absolutely should.)
-</p>
-<p>The chat rooms in this app are named after places in the movie:</p> 
-<ul><li>New York City: where the film is set.</li>
-<li>Shop Around The Corner: Kathleen's bookstore.</li>
-<li>Fox Books: a chain of mega-bookstores run by Joe and his family.</li>
-<li>Over 30: the chatroom where Joe and Kathleen meet.</li>
-</ul>
-<h3>Media sources:</h3>
-<p>Icons: Kathleen, Joe, Brinkley, Mailbox, Desktop icons (featured in the background of screens above .</p>
-<p>Audio:</p> 
+              <p class="font-weight-light text-secondary m-0">
+                Prince Edward Island, Canada
+              </p>
+              <a class="link m-0" href="https://github.com/claracampos"
+                >GitHub</a
+              >
+            </div>
+            <p>
+              This app was built on Node.js, Socket.io, a healthy dose of
+              nostalgia and the developer’s genuine love for Nora Ephron movies
+              starring Meg Ryan. (If you haven’t seen
+              <i>When Harry Met Sally yet</i>, you absolutely should.)<br />
+              The website layout was created using Bootstrap.
+            </p>
+            <p>
+              The chat rooms in this app are named after places in
+              <i>You've Got Mail</i>:
+            </p>
+            <ul>
+              <li>New York City: where the film is set.</li>
+              <li>Shop Around The Corner: Kathleen's bookstore.</li>
+              <li>
+                Fox Books: a chain of mega-bookstores run by Joe and his family.
+              </li>
+              <li>Over 30: the chatroom where Joe and Kathleen meet.</li>
+            </ul>
+            <p>
+              <b class="text-secondary">Disclaimer:</b> This project was
+              developed strictly for fun and education. This probably goes
+              without saying, but this website is in no way affiliated with the
+              creators and owners of the movie <i>You've Got Mail</i> and does
+              not claim any rights related to the film or its contents.
+            </p>
+            <h3 class="font-weight-bold mt-4">Media sources:</h3>
+            <p class="mb-1">
+              <b class="text-secondary">Icons: </b
+              ><a
+                class="link"
+                href="https://cdn1.thr.com/sites/default/files/imagecache/920x518/2018/08/meg_ryan_youve_got_mail_then_and_now_-_h_2018.jpg"
+                >Kathleen</a
+              >,
+              <a
+                class="link"
+                href="https://cdn1.thr.com/sites/default/files/imagecache/675x380/2018/08/tom_hanks_youve_got_mail_then_and_now_-_h_2018.jpg"
+                >Joe</a
+              >,
+              <a
+                class="link"
+                href="https://i.pinimg.com/originals/15/65/65/15656511295a20447b3c90e6c5014b7d.jpg"
+                >Brinkley (the dog)</a
+              >,
+              <a
+                class="link"
+                href="https://i.ytimg.com/vi/GSeeFgsqUxU/maxresdefault.jpg"
+                >mailbox</a
+              >,
+              <a class="link" href="http://cfhip.co.uk/icon/Computers/win98.gif"
+                >desktop icons</a
+              >
+              (featured in the website background on screens over 1200px wide).
+            </p>
+            <p>
+              <b class="text-secondary">Audio: </b>
+              <a class="link" href="https://www.youtube.com/watch?v=dudJjUU9Nhs"
+                >AOL Dial Up Internet Connection Sound + You've Got Mail
+                (America Online)
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
