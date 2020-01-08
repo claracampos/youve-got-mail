@@ -18,6 +18,17 @@ const messageTemplate = document.querySelector("#message-template");
 const adminMessageTemplate = document.querySelector("#admin-message-template");
 const userListTemplate = document.querySelector("#user-list-template");
 
+const autoscroll = () => {
+  const newMessageHeight = messages.lastElementChild.offsetHeight;
+  const visibleHeight = messages.offsetHeight;
+  const containerHeight = messages.scrollHeight;
+  const scrollOffset = messages.scrollTop + visibleHeight;
+
+  if (containerHeight - newMessageHeight <= scrollOffset) {
+    messages.scrollTop = messages.scrollHeight;
+  }
+};
+
 socket.on("message", ({ message, username }) => {
   const html = messageTemplate.innerHTML;
   const newMessage = Mustache.render(html, {
@@ -26,6 +37,8 @@ socket.on("message", ({ message, username }) => {
     timestamp: moment(message.createdAt).format("hh:mm A")
   });
   messages.insertAdjacentHTML("beforeend", newMessage);
+
+  autoscroll();
 });
 
 socket.on("adminMessage", message => {
