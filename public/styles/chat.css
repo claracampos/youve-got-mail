@@ -6,6 +6,10 @@ body {
   font-size: 1rem;
 }
 
+img {
+  width: 75px;
+}
+
 .gradient {
   background: rgb(244, 244, 244);
   background: linear-gradient(
@@ -48,17 +52,16 @@ body {
   }
 }
 
-@media only screen and (min-width: 600px) {
-}
-
-@media only screen and (min-width: 768px) {
-}
-
 @media only screen and (min-width: 1200px) {
-}
-
-@media only screen and (min-width: 1680px) {
+  body {
+    margin: 3rem;
+    font-size: 1.1rem;
+  }
 }
 
 @media only screen and (min-width: 3000px) {
+  body {
+    margin: 3rem;
+    font-size: 1.3rem;
+  }
 }
