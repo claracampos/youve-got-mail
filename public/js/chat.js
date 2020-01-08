@@ -64,5 +64,6 @@ messageForm.addEventListener("submit", e => {
   if (message) {
     socket.emit("sendMessage", { message, username, room });
     e.target.elements.message.value = "";
+    e.target.elements.message.focus();
   }
 });
