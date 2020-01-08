@@ -1,31 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="styles/chat.css">
+    <title>Chat</title>
+  </head>
   <body>
-    <div id="user-list"></div>
+    <div class="container-fluid d-flex flex-column chat-height">
+      <div class="btn-group font">
+        <button type="button" class="btn btn-primary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Users Online
+        </button>
+        <div class="dropdown-menu user-menu p-2">
+          <div id="user-list"></div>
+        </div>
+      </div>
+    <div class="chat-messages p-2">
     <div id="messages"></div>
-    <div>
+    </div>
+    <div class="pt-2 chat-form">
       <form id="message-form">
-        <input type="text" placeholder="Message" name="message" />
-        <button>Send</button>
+        <div class="form-group d-flex flex-row">
+        <input class="flex-grow-1 mr-1 form-control rounded-0" type="text" placeholder="Message" name="message" />
+        <button class="px-2">Send</button></div>
       </form>
     </div>
+    
+  </div>
     <script id="message-template" type="text/html">
       <div>
         <p>
-          ({{timestamp}}) <strong>{{ username }}:</strong> {{ message }}
+          <small>({{timestamp}})</small> <b>{{ username }}:</b> {{ message }}
         </p>
       </div>
     </script>
     <script id="admin-message-template" type="text/html">
       <div><p><em>{{message}}</em></p></div>
     </script>
+
     <script id="user-list-template" type="text/html">
-      <h2>Room: {{room}}</h2>
-      <h3>Users:</h3>
-      <ul>
+      <p class="font-weight-bold"><span class="text-primary">Room:</span> {{room}}</p>
+      <div class="dropdown-divider"></div>
+      <p class="font-weight-bold text-primary">Users Online ({{count}}):</p>
+      <ul class="list-group list-group-flush">
         {{#users}}
-        <li><img src={{{icon}}}> {{username}}</li>
+        <li class="list-group-item p-0 mb-1"><img class="rounded" src={{{icon}}}> {{username}}</li>
         {{/users}}
       </ul>
     </script>
@@ -34,5 +66,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.1/qs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./js/chat.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

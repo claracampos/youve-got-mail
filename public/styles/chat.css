@@ -1,0 +1,60 @@
+html {
+  height: 100vh;
+}
+body {
+  background: rgb(99, 217, 247);
+  background: linear-gradient(
+    0deg,
+    rgba(99, 217, 247, 0.3508753843334209) 35%,
+    rgba(0, 194, 255, 1) 100%
+  );
+  margin: 2rem;
+  font-size: 1rem;
+}
+
+.chat-messages {
+  height: 80vh;
+  overflow: auto;
+  background-color: white;
+  word-wrap: break-word;
+}
+
+.chat-height {
+  height: 85vh;
+  overflow: auto;
+}
+
+.user-menu {
+  height: 60vh;
+  max-width: 90%;
+  overflow: auto;
+}
+
+.chat-form {
+  width: 100%;
+}
+
+.font {
+  font-family: "Roboto Slab", serif;
+}
+
+@media only screen and (max-width: 600px) {
+  img {
+    width: 60px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
+
+@media only screen and (min-width: 1680px) {
+}
+
+@media only screen and (min-width: 3000px) {
+}

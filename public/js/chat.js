@@ -52,7 +52,8 @@ socket.on("roomData", ({ room, users }) => {
   };
   const newUserList = Mustache.render(html, {
     room: roomTitle(room),
-    users: users
+    users: users,
+    count: users.length
   });
   userList.innerHTML = newUserList;
 });
