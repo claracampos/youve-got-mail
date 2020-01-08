@@ -18,37 +18,39 @@
       href="styles/chat.css">
     <title>Chat</title>
   </head>
-  <body>
-    <div class="container-fluid d-flex flex-column chat-height">
-      <div class="btn-group font">
-        <button type="button" class="btn btn-primary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <body class="bg-info">
+    <div class="gradient border border-dark rounded shadow p-2">
+    <div class="container-fluid d-flex flex-column chat-height mt-2">
+      <div class="btn-group ">
+        <button type="button" class="font btn w-75 btn-primary border border-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Users Online
-        </button>
+        </button><a href="/" class="btn gradient border border-secondary rounded-0">Leave chat
+        </a>
         <div class="dropdown-menu user-menu p-2">
           <div id="user-list"></div>
         </div>
       </div>
-    <div class="chat-messages p-2">
+    <div class="chat-messages p-2 border border-light shadow">
     <div id="messages"></div>
     </div>
     <div class="pt-2 chat-form">
       <form id="message-form">
         <div class="form-group d-flex flex-row">
-        <input class="flex-grow-1 mr-1 form-control rounded-0" type="text" placeholder="Message" name="message" />
-        <button class="px-2">Send</button></div>
+        <input class="flex-grow-1 shadow-sm border border-light mr-1 form-control rounded-0" type="text" placeholder="Message" name="message" />
+        <button class="px-2 rounded">Send</button></div>
       </form>
-    </div>
+    </div></div>
     
   </div>
     <script id="message-template" type="text/html">
       <div>
-        <p>
-          <small>({{timestamp}})</small> <b>{{ username }}:</b> {{ message }}
+        <p class="m-0">
+          <small class="timestamp text-secondary">{{timestamp}}</small> <b class="text-primary">{{ username }}:</b> {{ message }}
         </p>
       </div>
     </script>
     <script id="admin-message-template" type="text/html">
-      <div><p><em>{{message}}</em></p></div>
+      <div><p class="text-secondary"><i>{{message}}</i></p></div>
     </script>
 
     <script id="user-list-template" type="text/html">

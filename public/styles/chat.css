@@ -2,14 +2,17 @@ html {
   height: 100vh;
 }
 body {
-  background: rgb(99, 217, 247);
-  background: linear-gradient(
-    0deg,
-    rgba(99, 217, 247, 0.3508753843334209) 35%,
-    rgba(0, 194, 255, 1) 100%
-  );
   margin: 2rem;
   font-size: 1rem;
+}
+
+.gradient {
+  background: rgb(244, 244, 244);
+  background: linear-gradient(
+    180deg,
+    rgba(244, 244, 244, 1) 22%,
+    rgba(219, 219, 219, 1) 43%
+  );
 }
 
 .chat-messages {
@@ -17,6 +20,7 @@ body {
   overflow: auto;
   background-color: white;
   word-wrap: break-word;
+  font-family: "Roboto Slab", serif;
 }
 
 .chat-height {
@@ -26,7 +30,7 @@ body {
 
 .user-menu {
   height: 60vh;
-  max-width: 90%;
+  width: 100%;
   overflow: auto;
 }
 
