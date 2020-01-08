@@ -5,6 +5,11 @@ body {
   padding: 2rem 2rem 0 2rem;
 }
 
+img {
+  width: 70%;
+  height: auto;
+}
+
 .input-width {
   width: 50%;
 }
@@ -45,6 +50,28 @@ body {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .audio-width {
+    width: 90%;
+  }
+
+  .input-width {
+    width: 70%;
+  }
+  .small-text {
+    font-size: 0.9rem;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
