@@ -19,98 +19,104 @@
     </title>
   </head>
   <body class="bg-info">
-    <nav class="navbar navbar-light bg-primary border border-dark">
-      <button class="btn  btn-outline-light">About</button>
-    </nav>
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col bg-white shadow rounded-bottom border border-secondary">
-          <div>
-            <h1 class="pt-3 font-weight-bold">You've Got Mail!</h1>
-            <h2 class="font-weight-bold">
-              A chat app based on the 90s rom-com starring Tom Hanks & Meg Ryan.
-            </h2>
-          </div>
-          <div class="mt-4">
-            <form action="./chat.html">
-              <div class="form-group d-flex flex-column">
-                <label>Enter your username:</label>
-                <input
-                  class="align-self-center input-width"
-                  type="text"
-                  name="username"
-                  placeholder="Username"
-                  required
-                />
-              </div>
-              <div class="form-group d-flex flex-column">
-                <label>Pick a room:</label>
-                <select class="align-self-center input-width" name="room">
-                  <option value="nyc">New York City</option>
-                  <option value="shop-corner">Shop Around The Corner</option>
-                  <option value="fox-books">Fox Books</option>
-                  <option value="over-30">Over 30</option>
-                </select>
-              </div>
-              <div class="container form-group">
-                <div class="row">
-                  <div class="col align-items-center">
-                    <label>Choose your icon:</label><br />
-                    <div
-                      class="d-inline-flex flex-row flex-wrap justify-content-center"
-                    >
-                      <div class="mb-2">
-                        <input
-                          type="radio"
-                          name="icon"
-                          value="email"
-                          checked
-                        /><img src="./media/email.jpg" class="ml-1" />
-                      </div>
-                      <div class=" mb-2">
-                        <input type="radio" name="icon" value="meg" /><img
-                          src="./media/meg.jpg"
-                          class="ml-1"
-                        />
-                      </div>
-                      <div class=" mb-2">
-                        <input type="radio" name="icon" value="tom" /><img
-                          src="./media/tom.jpg"
-                          class="ml-1"
-                        />
-                      </div>
-                      <div class=" mb-2">
-                        <input type="radio" name="icon" value="dog" /><img
-                          src="./media/dog.jpg"
-                          class="ml-1"
-                        />
+    <div class="container-fluid desktop-view">
+      <nav class="navbar navbar-light bg-primary border border-dark">
+        <button class="btn btn-outline-light">About</button>
+      </nav>
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div
+            class="col bg-white shadow rounded-bottom border border-secondary"
+          >
+            <div>
+              <h1 class="pt-3 font-weight-bold">You've Got Mail!</h1>
+              <h2 class="font-weight-bold">
+                A chat app based on the 90s rom-com starring Tom Hanks & Meg
+                Ryan.
+              </h2>
+            </div>
+            <div class="mt-4">
+              <form action="./chat.html">
+                <div class="form-group d-flex flex-column">
+                  <label>Enter your username:</label>
+                  <input
+                    class="align-self-center input-width"
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    required
+                  />
+                </div>
+                <div class="form-group d-flex flex-column">
+                  <label>Pick a room:</label>
+                  <select class="align-self-center input-width" name="room">
+                    <option value="nyc">New York City</option>
+                    <option value="shop-corner">Shop Around The Corner</option>
+                    <option value="fox-books">Fox Books</option>
+                    <option value="over-30">Over 30</option>
+                  </select>
+                </div>
+                <div class="container form-group">
+                  <div class="row">
+                    <div class="col align-items-center">
+                      <label>Choose your icon:</label><br />
+                      <div
+                        class="d-inline-flex flex-row flex-wrap justify-content-center"
+                      >
+                        <div class="mb-2">
+                          <input
+                            type="radio"
+                            name="icon"
+                            value="email"
+                            checked
+                          /><img src="./media/email.jpg" class="ml-1" />
+                        </div>
+                        <div class=" mb-2">
+                          <input type="radio" name="icon" value="meg" /><img
+                            src="./media/meg.jpg"
+                            class="ml-1"
+                          />
+                        </div>
+                        <div class=" mb-2">
+                          <input type="radio" name="icon" value="tom" /><img
+                            src="./media/tom.jpg"
+                            class="ml-1"
+                          />
+                        </div>
+                        <div class=" mb-2">
+                          <input type="radio" name="icon" value="dog" /><img
+                            src="./media/dog.jpg"
+                            class="ml-1"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <button class="btn-sm btn-danger border-secondary px-4">
-                Join!
-              </button>
-            </form>
-          </div>
-          <div class="mt-4">
-            <p class="small-text">
-              (For extra ambience, click <b>play</b> to relive that sweet/awful
-              dial-up connection sound from 1998.)
-            </p>
-            <audio
-              class="audio-width mb-4"
-              controls
-              src="./media/audio.mp3"
-              type="audio/mp3"
-            ></audio>
+                <button class="btn-sm btn-danger border-secondary px-4">
+                  Join!
+                </button>
+              </form>
+            </div>
+            <div class="mt-4">
+              <p class="small-text">
+                (For extra ambience, click <b>play</b> to relive that
+                sweet/awful dial-up connection sound from 1998.)
+              </p>
+              <audio
+                class="audio-width mb-4"
+                controls
+                src="./media/audio.mp3"
+                type="audio/mp3"
+              ></audio>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="mt-4">
-      <p class="footer-text">Created by Clara Campos, 2020.</p>
+
+      <div class="mt-3">
+        <p class="footer-text">Created by Clara Campos, 2020.</p>
+      </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script

@@ -2,7 +2,7 @@ body {
   font-family: "Roboto Slab", serif;
   text-align: center;
   margin: 0;
-  padding: 2rem 2rem 0 2rem;
+  padding: 2rem 0.5rem 0 0.5rem;
 }
 
 img {
@@ -43,9 +43,6 @@ img {
   .input-width {
     width: 70%;
   }
-  .small-text {
-    font-size: 0.9rem;
-  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -63,23 +60,48 @@ img {
   }
 
   .audio-width {
-    width: 90%;
+    width: 50%;
   }
 
   .input-width {
-    width: 70%;
-  }
-  .small-text {
-    font-size: 0.9rem;
+    width: 35%;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  body {
+    padding: 5rem 2rem 0 2rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
+  .audio-width {
+    width: 50%;
+  }
+
+  .input-width {
+    width: 30%;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  body {
+    padding: 2rem 2rem 0 2rem;
+  }
+
+  .input-width {
+    width: 35%;
+  }
+  .audio-width {
+    width: 50%;
+  }
+
+  .desktop-view {
+    padding-left: 20%;
+    width: 80%;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
