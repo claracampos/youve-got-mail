@@ -2,12 +2,7 @@ const path = require("path");
 const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
-const {
-  addUser,
-  removeUser,
-  getUser,
-  getUsersInRoom
-} = require("./utils/users");
+const { addUser, removeUser, getUsersInRoom } = require("./utils/users");
 
 const app = express();
 const server = http.createServer(app);
@@ -19,8 +14,6 @@ const publicDirectoryPath = path.join(__dirname, "../public");
 app.use(express.static(publicDirectoryPath));
 
 io.on("connection", socket => {
-  console.log("New connection");
-
   socket.on("join", ({ username, room, icon }, callback) => {
     const { error } = addUser({ username, room, icon, id: socket.id });
 
@@ -59,6 +52,4 @@ io.on("connection", socket => {
   });
 });
 
-server.listen(port, () => {
-  console.log(`Port ${port}`);
-});
+server.listen(port);

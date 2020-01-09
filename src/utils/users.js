@@ -1,6 +1,26 @@
 const users = [];
 
-//user = {username, room, id, icon}
+const validateRoom = room => {
+  return (
+    room === "nyc" ||
+    room === "shop-corner" ||
+    room === "fox-books" ||
+    room === "over-30"
+  );
+};
+
+const validateIcon = icon => {
+  return icon === "meg" || icon === "tom" || icon === "dog" || icon === "email";
+};
+
+const checkExistingUsernames = username => {
+  return users.find(
+    existingUser =>
+      existingUser.username.trim().toLowerCase() ===
+      username.trim().toLowerCase()
+  );
+};
+
 const addUser = ({ username, room, id, icon }) => {
   if (!username) {
     return { error: "Username required." };
@@ -10,36 +30,15 @@ const addUser = ({ username, room, id, icon }) => {
     return { error: "Room required." };
   }
 
-  const listedRoom = room => {
-    return (
-      room === "nyc" ||
-      room === "shop-corner" ||
-      room === "fox-books" ||
-      room === "over-30"
-    );
-  };
-
-  if (!listedRoom(room)) {
+  if (!validateRoom(room)) {
     return { error: "The room you requested is not available." };
   }
 
-  const existingUser = users.find(
-    existingUser =>
-      existingUser.username.trim().toLowerCase() ===
-      username.trim().toLowerCase()
-  );
-
-  if (existingUser) {
+  if (checkExistingUsernames(username)) {
     return { error: "The username you selected is already in use." };
   }
 
-  const listedIcon = icon => {
-    return (
-      icon === "meg" || icon === "tom" || icon === "dog" || icon === "email"
-    );
-  };
-
-  if (!listedIcon(icon)) {
+  if (!validateIcon(icon)) {
     icon = "email";
   }
 
@@ -48,10 +47,6 @@ const addUser = ({ username, room, id, icon }) => {
   const newUser = { id, username, icon, room };
   users.push(newUser);
   return newUser;
-};
-
-const getUser = id => {
-  return users.find(existingUser => existingUser.id === id);
 };
 
 const getUsersInRoom = room => {
@@ -68,7 +63,6 @@ const removeUser = id => {
 
 module.exports = {
   addUser,
-  getUser,
   getUsersInRoom,
   removeUser
 };
