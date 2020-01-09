@@ -45,6 +45,8 @@ socket.on("adminMessage", message => {
   const html = adminMessageTemplate.innerHTML;
   const newMessage = Mustache.render(html, { message: message });
   messages.insertAdjacentHTML("beforeend", newMessage);
+
+  autoscroll();
 });
 
 socket.on("roomData", ({ room, users }) => {
