@@ -13,35 +13,47 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="styles/chat.css">
+    <link rel="stylesheet" href="styles/chat.css" />
     <title>Chat | You've Got Mail!</title>
   </head>
   <body class="bg-info">
     <div class="gradient border border-dark rounded shadow p-2">
-    <div class="container-fluid d-flex flex-column chat-height mt-2">
-      <div class="btn-group ">
-        <button type="button" class="font btn w-75 btn-primary border border-secondary dropdown-toggle rounded-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Users Online
-        </button><a href="/" class="btn gradient border border-secondary rounded-0">Leave chat
-        </a>
-        <div class="dropdown-menu user-menu p-2">
-          <div id="user-list"></div>
+      <div class="container-fluid d-flex flex-column chat-height mt-2">
+        <div class="btn-group ">
+          <button
+            type="button"
+            class="font btn w-75 btn-primary border border-secondary dropdown-toggle rounded-0"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Users Online</button
+          ><a href="/" class="btn gradient border border-secondary rounded-0"
+            >Leave chat
+          </a>
+          <div class="dropdown-menu user-menu p-2">
+            <div id="user-list"></div>
+          </div>
+        </div>
+        <div
+          id="messages"
+          class="chat-messages p-2 border border-secondary shadow-sm"
+        ></div>
+        <div class="pt-2 chat-form">
+          <form id="message-form" autocomplete="off">
+            <div class="form-group d-flex flex-row">
+              <input
+                class="flex-grow-1 shadow-sm border border-light mr-1 form-control rounded-0"
+                type="text"
+                placeholder="Message"
+                name="message"
+              />
+              <button class="px-2 rounded">Send</button>
+            </div>
+          </form>
         </div>
       </div>
-    <div id="messages" class="chat-messages p-2 border border-secondary shadow-sm">
-    
     </div>
-    <div class="pt-2 chat-form">
-      <form id="message-form" autocomplete="off">
-        <div class="form-group d-flex flex-row">
-        <input class="flex-grow-1 shadow-sm border border-light mr-1 form-control rounded-0" type="text" placeholder="Message" name="message" />
-        <button class="px-2 rounded">Send</button></div>
-      </form>
-    </div></div>
-    
-  </div>
     <script id="message-template" type="text/html">
       <div>
         <p class="m-0">
@@ -50,7 +62,7 @@
       </div>
     </script>
     <script id="admin-message-template" type="text/html">
-      <div><p class="text-secondary"><i>{{message}}</i></p></div>
+      <div><p class="text-secondary my-2"><i>{{message}}</i></p></div>
     </script>
 
     <script id="user-list-template" type="text/html">
